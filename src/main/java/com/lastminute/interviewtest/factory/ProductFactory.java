@@ -6,7 +6,6 @@ import com.lastminute.interviewtest.factory.supplier.MedicinalSupplier;
 import com.lastminute.interviewtest.factory.supplier.OtherProductSupplier;
 import com.lastminute.interviewtest.model.product.Product;
 
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
@@ -21,15 +20,11 @@ public class ProductFactory {
         factory.put("other", new OtherProductSupplier());
     }
 
-    public static Product getProduct(String id, String name, BigDecimal price, boolean imported){
+    public static Product getProduct(String id){
         Supplier<? extends Product> supplier = factory.get(id);
         if(supplier == null)
             throw new IllegalArgumentException("No product registered with id: " + id);
-        Product product = supplier.get();
-        product.setName(name);
-        product.setPrice(price);
-        product.setImported(imported);
-        return product;
+        return supplier.get();
     }
 
     public static void registerProduct(String id, Supplier<? extends Product> supplier){

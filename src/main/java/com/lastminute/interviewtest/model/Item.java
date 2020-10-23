@@ -2,6 +2,9 @@ package com.lastminute.interviewtest.model;
 
 import com.lastminute.interviewtest.model.product.Product;
 
+/**
+ * Item to be purchased
+ */
 public class Item {
     int quantity;
     Product product;
@@ -15,15 +18,7 @@ public class Item {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
     public Product getProduct() {
         return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
     }
 }

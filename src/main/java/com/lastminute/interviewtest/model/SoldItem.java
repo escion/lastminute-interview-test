@@ -2,15 +2,18 @@ package com.lastminute.interviewtest.model;
 
 import java.math.BigDecimal;
 
+/**
+ * Item to be sold
+ */
 public class SoldItem {
     int quantity;
     String name;
-    BigDecimal price;
+    BigDecimal finalPrice;
 
-    public SoldItem(int quantity, String name, BigDecimal price) {
+    public SoldItem(int quantity, String name, BigDecimal finalPrice) {
         this.quantity = quantity;
         this.name = name;
-        this.price = price;
+        this.finalPrice = finalPrice;
     }
 
     public int getQuantity() {
@@ -21,7 +24,7 @@ public class SoldItem {
         return name;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public BigDecimal getFinalPrice() {
+        return finalPrice;
     }
 }
