@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 public class TaxCalculatorController {
 
     /**
-     *
+     * Calculate the receipt with given items
      * @param items: items to be purchased
      * @return receipt with items, taxes and total price
      */

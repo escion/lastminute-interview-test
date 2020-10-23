@@ -10,6 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
+/**
+ * Factory method for creating products by id
+ */
 public class ProductFactory {
 
     final static Map<String, Supplier<? extends Product>> factory = new HashMap<>();
