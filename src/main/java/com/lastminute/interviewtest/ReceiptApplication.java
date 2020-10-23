@@ -5,6 +5,7 @@ import com.lastminute.interviewtest.model.Item;
 import com.lastminute.interviewtest.model.Receipt;
 import com.lastminute.interviewtest.utils.FileUtils;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -15,7 +16,8 @@ import java.util.stream.Collectors;
 public class ReceiptApplication {
 
     private final static Logger log = Logger.getLogger(FileUtils.class.getName());
-    static List<Integer> FILE_INDEXES = Arrays.asList(1,2,3);
+    static final List<Integer> FILE_INDEXES = Arrays.asList(1,2,3);
+    static final int CSV_FIELDS = 5;
 
     public static void main(String[] args){
         FILE_INDEXES.forEach(i -> {
@@ -24,6 +26,7 @@ public class ReceiptApplication {
                 csv = FileUtils.readFromCsv("input_" + i + ".csv");
                 List<Item> items = csv
                                     .stream()
+                                    .filter(row -> row.size() == CSV_FIELDS)
                                     .map(row -> TaxCalculatorController.getItem(row.get(1), row.get(2), row.get(3), row.get(4), row.get(0)))
                                     .collect(Collectors.toList());
                 Receipt receipt = TaxCalculatorController.getReceipt(items);
