@@ -7,5 +7,5 @@ Items can be read from 3 csv files and each item is structured in this way:
    - imported
    - quantity
 
-Automated build (with unit tests and program execution) can be found here: https://travis-ci.com/github/escion/lastminute-interview-test
+Automated build (also with program execution) can be found here: https://travis-ci.com/github/escion/lastminute-interview-test
 
