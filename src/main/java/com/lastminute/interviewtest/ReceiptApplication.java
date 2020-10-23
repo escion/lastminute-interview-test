@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 public class ReceiptApplication {
 
-    private final static Logger log = Logger.getLogger(FileUtils.class.getName());
+    static final Logger log = Logger.getLogger(FileUtils.class.getName());
     static final List<Integer> FILE_INDEXES = Arrays.asList(1,2,3);
     static final int CSV_FIELDS = 5;
 
